@@ -1,24 +1,23 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
 
-    private int orderNumber;
+    private String id;
     private Patient patient;
     private Employee doctor;
     private List<OrderItem> items;
 
-    public Order(int orderNumber, Patient patient, Employee doctor) {
-        this.orderNumber = orderNumber;
+    public Order(String id, Patient patient, Employee doctor, List<OrderItem> items) {
+        this.id = id;
         this.patient = patient;
         this.doctor = doctor;
-        this.items = new ArrayList<>();
+        this.items = items;
     }
 
-    public int getOrderNumber() {
-        return orderNumber;
+    public String getId() {
+        return id;
     }
 
     public Patient getPatient() {
@@ -27,10 +26,6 @@ public class Order {
 
     public Employee getDoctor() {
         return doctor;
-    }
-
-    public void addItem(OrderItem item) {
-        items.add(item);
     }
 
     public List<OrderItem> getItems() {
